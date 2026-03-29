@@ -1,134 +1,216 @@
-# D3IL_Benchmark
+# D3IL Guided Diffusion Planning
 
-[Paper](https://openreview.net/forum?id=6pPYRXKPpw), [Project Page](https://alrhub.github.io/d3il-website/), [ICLR 2024](https://iclr.cc/)
+Differentiable guided diffusion planning for robotic manipulation in D3IL, with a focus on the **Avoiding** task and an MJX/JAX-based differentiable rollout path for inference-time guidance.
 
-[Xiaogang Jia](https://xiaogangjia.github.io/Personal_Website/)<sup>1</sup><sup>2</sup>,
-[Denis Blessing](https://alr.iar.kit.edu/21_495.php)<sup>1</sup>,
-[Xinkai Jiang](https://alr.iar.kit.edu/21_500.php)<sup>1</sup><sup>2</sup>,
-[Moritz Reuss](https://mbreuss.github.io/)<sup>2</sup>,
-Atalay Donat<sup>1</sup>,
-[Rudolf Lioutikov](https://rudolf.intuitive-robots.net/)<sup>2</sup>,
-[Gerhard Neumann](https://alr.iar.kit.edu/21_65.php)<sup>1</sup>
+---
 
-<sup>1</sup>Autonomous Learning Robots, Karlsruhe Institute of Technology
+## Overview
 
-<sup>2</sup>Intuitive Robots Lab, Karlsruhe Institute of Technology
+This repository is a research fork built on top of **D3IL**. The original D3IL codebase provides diffusion-policy training, simulation environments, and robot/control infrastructure. This project extends it in a specific direction:
 
-<p align="center">
+- train or reuse a **diffusion policy** in the D3IL framework,
+- run that policy in the **Avoiding** environment,
+- replace the guidance-side rollout chain with a **JAX/MJX differentiable path**,
+- compute rollout-based trajectory cost gradients during denoising,
+- inject those gradients into reverse diffusion to obtain **guided diffusion planning**.
 
-  <img width="100.0%" src="figures/github_readme.gif">
+In short, the project adds a differentiable planning branch on top of D3IL’s policy/environment stack.
 
-</p>
+---
 
-This project encompasses the D3IL Benchmark, comprising 7 robot learning tasks: Avoiding, Pushing,
-Aligning, Sorting, Stacking, Inserting, and Arranging. All these environments are implemented 
-using Mujoco and Gym. The [D3IL](environments/d3il) directory includes the robot controller along with the environment 
-implementations, while the [Agents](agents) directory provides 11 imitation learning methods encompassing 
-both state-based and image-based policies.
+## Main Idea
 
+This repository reorganizes the original research code into reusable modules so that other users can:
+
+- load a pretrained diffusion policy,
+- run a differentiable MJX rollout,
+- define rollout-based costs,
+- inject cost gradients into the denoising process,
+- evaluate the planner in the Avoiding environment,
+- visualize trajectories and denoising statistics.
+
+The current version contains only the core guidance terms:
+
+- **center-x cost**: keep the executed motion near the middle corridor,
+- **barrier cost**: keep the executed motion away from the barrier.
+
+---
+
+## Guided diffusion planning algorithm
+
+## Pseudocode
+
+```text
+Guided Diffusion Planning
+
+Input:
+  trained diffuser μθ
+  differentiable simulator S
+  cost function J(τ)
+  guidance scale α
+  covariances Σi
+
+while not done:
+    observe current state s
+    initialize trajectory variable τ_N ~ N(0, I)
+
+    for i = N, ..., 1:
+        μ <- μθ(τ_i, s)                  # reverse diffusion step
+        ξ <- S(τ_i; s)                   # rollout from current state
+        J_val <- J(τ_i, ξ)               # rollout-based cost
+        g <- ∇_τ J_val                   # gradient through rollout
+        τ_{i-1} ~ N(μ - α Σ_i g Σ_i)     # guided sampling update
+
+    execute a_0 <- τ_0^{a_0} in environment
+```
+
+### Interpretation
+
+This repository uses **receding-horizon guided sampling**:
+
+- denoise a short future plan,
+- execute only the first part,
+- observe again,
+- replan at the next environment step.
+
+---
+
+## Repository structure
+
+```text
+.
+├── agents/                  # trained or trainable diffusion 
+├── avoiding/                # Avoiding task assets, plans, and related task-specific files
+├── configs/                 # configuration files for training / simulation / evaluation
+├── environments/            # environment definitions and wrappers
+├── logs/                    # training and experiment logs
+├── planning/
+│   ├── guided_mpc/
+│   │   ├── __init__.py
+│   │   ├── agent_utils.py   # load/build diffusion agent for guided planning
+│   │   ├── constants.py     # shared constants and task defaults
+│   │   ├── costs.py         # center-x / smooth / barrier costs and configs
+│   │   ├── planner.py       # guided diffusion planner
+│   │   ├── plots.py         # plotting utilities for diagnostics and evaluation
+│   │   └── simulator.py     # MJX differentiable rollout wrapper
+│   └── scripts/
+│       └── run_guided_avoiding.py   # main guided planning experiment script
+├── plotting_results/        # generated figures and comparison plots
+├── scripts/                 # utility scripts from training / evaluation pipeline
+├── simulation/              # simulator-side code, including D3IL/MuJoCo/MJX-related components
+├── run.py                   # main entry for standard training workflow
+├── README.md
+└── LICENSE
+```
+
+---
 
 ## Installation
-```
-# assuming you already have conda installed
-bash install.sh
-```
 
-## Usage
+Because this repository is based on D3IL and MuJoCo/JAX/MJX, dependencies depend on your machine setup.
 
-### File System
+A typical setup includes:
 
-```
-D3IL_Benchmark
-└── agents # model implementation
-    └── models
-    ...
-└── configs # task configs and model hyper parameters
-└── environments
-    └── d3il    
-        └── d3il_sim    # code for controller, robot, camera etc.
-        └── envs        # gym environments for all tasks
-        └── models      # object xml files
-        ...
-    └── dataset # data saving folder and data process
-        └── data
-        ...
-└── scripts # running scripts and hyper parameters
-    └── aligning
-    └── stacking
-    ...
-└── simulation # task simulation
-...
-```
-### Download the dataset
+- Python 3.10 or 3.11
+- PyTorch
+- Hydra / OmegaConf
+- NumPy
+- Matplotlib
+- MuJoCo
+- JAX
+- MJX
 
-Donwload the zip file from `https://drive.google.com/file/d/1SQhbhzV85zf_ltnQ8Cbge2lsSWInxVa8/view?usp=drive_link`
+If the repository already contains an installation helper, start with:
 
-Extract the data into the folder `environments/dataset/data/`
-
-
-### Reproduce the results
-
-We conducted extensive experiments for imitation learning methods, spanning deterministic policies to 
-multi-modal policies, and from MLP-based models to Transformer-based models. To reproduce the results 
-mentioned in the paper, use the following commands:
-
-Train state-based MLP on the Pushing task
-```
-bash scripts/aligning/bc_benchmark.sh
+```bash
+conda env create -f d3il_diff.yml
+conda activate d3il_diff
 ```
 
-Train state-based BeT on the Aligning task
+Then install any missing dependencies required by your GPU/CUDA/JAX environment.
+
+### Recommended note
+
+If you are using MJX on GPU, make sure your installed JAX build matches your CUDA version.
+
+---
+
+## Running guided diffusion planning
+
+The main experiment entry is:
+
+```bash
+python planning/scripts/run_guided_avoiding.py
 ```
-bash scripts/aligning/bet_benchmark.sh
+
+Depending on your local config style, you may also pass:
+
+- checkpoint path,
+- alpha / guidance strength,
+- number of episodes,
+- plotting/logging output directory,
+- whether MJX guidance is enabled.
+
+A typical experimental question is:
+
+- how does performance change for `alpha`?
+
+where:
+
+- `alpha = 0` means no guidance,
+- larger `alpha` means stronger rollout-gradient guidance.
+
+---
+
+## Results
+
+Below are example result figures used in this project. In the repository, these are typically stored under `plotting_results/`.
+
+### 1. Trajectory comparison under different guidance strengths using *center-x cost**
+
+![Alpha comparison](plotting_results/final_results/alpha_comparison_3results.png)
+
+This figure compares rollouts for different `alpha` values.
+
+Typical observation:
+
+- `alpha=0`: trajectories obtained by diffusion model,
+- moderate guidance: trajectories begin to concentrate,
+- strong guidance: trajectories are pulled closer to the corridor center.
+
+### 2. Trajectory comparison under different guidance strengths using *barrier cost**
+
+![Alpha comparison](plotting_results/final_results/obs_comparison_middle_barrier.png)
+
+This figure compares rollouts for different `alpha` values.
+
+Typical observation:
+
+- `alpha=0`: trajectories obtained by diffusion model,
+- strong guidance: trajectories are pushed away from the barrier.
+
+---
+
+
+## Minimal usage workflow
+### Step 1: Design or modify the cost function or weights
+
+### Step 2: run guided planning on Avoiding
+
+```bash
+python planning/scripts/run_guided_avoiding.py
 ```
 
-Train image-based DDPM-ACT on the sorting task
-```
-bash scripts/sorting_4_vision/ddpm_encdec_benchmark.sh
-```
+### Step 3: compare multiple guidance strengths
 
-### Train your models
-We offer a unified interface for integrating new algorithms:
+Run the same script with several values of `alpha`, for example:
 
-- Add your method in `agents/models/`
-- Read `agents/base_agent.py` and `agents/bc_agent.py` and implement your new agent there
-- Add your agent config file in `configs/agents/`
-- Add a training scripts in `scripts/aligning/`
+- `alpha=0`
+- `alpha=15`
+- `alpha=50`
 
-### Creating Custom Tasks
-Our simulation system, built on Mujoco and Gym, allows the creation of new tasks. In order to create new tasks, please 
-refer to the [D3il_Guide](environments/d3il/README.md)
+### Step 4: visualize and summarize
 
-After creating your task and recording data, simulate imitation learning methods on your task by following these steps:
+Save figures into `plotting_results/` and analyze the results.
 
-- Read `environments/dataset/base_dataset.py` and `environments/dataset/pushing_dataset.py` and 
-implement your task dataset there
-- Read `configs/pushing_config.yaml` and Add your task config file in `configs/`
-- Read `simulation/base_sim.py` and `simulation/pushing_sim.py` and implement 
-your task simulation there
-
-### Recording your own data
-We provide the script `environments/d3il/gamepad_control/record_data.py` to record data for any task using a gamepad controller.
-To record data for the tasks we provided, run `record_data.py -t <task>`. If you made a custom task, you need to add it to the script. Data that you record will be saved in the folder `environments/d3il/gamepad_control/data/<task>/recorded_data/`. The controls are as follows:
-
-- `Right stick` to move the robot
-- `A` to save the current episode
-- `Y` to drop the current episode, reset the environment and start recording
-- `B` to stop recording (but continue the episode)
-- `A` to start recording
-
-Please note that when `record_data.py` is first called, it starts recording by default.
-
-## Key Components
-- We use [Wandb](https://wandb.ai/site) to manage the experiments, so you should **specify your wandb account and project** in each task config file.
-- We split the models into MLP-based and history-based methods; adjust `window_size` for different methods accordingly
-
-### Acknowledgements
-
-The code of this repository relies on the following existing codebases:
-
-- BeT agent adapted from [bet](https://github.com/notmahi/bet).
-- ACT agent from [act](https://github.com/tonyzhaozh/act)
-- Diffusion Policy from [diffusion_policy](https://github.com/real-stanford/diffusion_policy)
-- Beso Agent from [beso](https://github.com/intuitive-robots/beso)
-- Implicit Behavior Cloning (IBC) Agent is inspired by [Kevin Zakka's reimplementation in torch](https://github.com/kevinzakka/ibc) 
+---
