@@ -1,0 +1,10 @@
+- agents=ddpm_transformer_agent
+- agent_name=ddpm_transformer
+- window_size=5
+- group=avoiding_ddpm_transformer_seeds
+- seed=0
+- simulation.n_cores=1
+- simulation.n_trajectories=1
+- agents.model.n_timesteps=8
+- +prior_horizon=60
+- +prior_save_path=ddpm_prior_actions_seed0.npy

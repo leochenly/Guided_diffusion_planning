@@ -1,0 +1,34 @@
+[2025-12-04 10:15:43,078][agents.models.beso.agents.diffusion_agents.k_diffusion.score_gpts][INFO] - number of parameters: 2.540180e+05
+[2025-12-04 10:15:43,138][root][INFO] - Loading Sorting Dataset
+[2025-12-04 10:15:43,142][root][INFO] - Loading Sorting Dataset
+[2025-12-04 10:15:43,148][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-04 10:15:43,148][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-04 10:15:43,148][agents.base_agent][INFO] - The model has a total amount of 254018 parameters
+[2025-12-04 10:16:04,258][agents.beso_agent][INFO] - Epoch 149: Mean test mse is 0.37249742661203655
+[2025-12-04 10:16:04,265][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:16:25,518][agents.beso_agent][INFO] - Epoch 299: Mean test mse is 0.30025479197502136
+[2025-12-04 10:16:25,526][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:16:53,752][agents.beso_agent][INFO] - Epoch 449: Mean test mse is 0.2614658113036837
+[2025-12-04 10:16:53,762][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:17:25,686][agents.beso_agent][INFO] - Epoch 599: Mean test mse is 0.23947984193052566
+[2025-12-04 10:17:25,693][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:17:50,202][agents.beso_agent][INFO] - Epoch 749: Mean test mse is 0.21850772202014923
+[2025-12-04 10:17:50,212][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:18:11,240][agents.beso_agent][INFO] - Epoch 899: Mean test mse is 0.20699856536728994
+[2025-12-04 10:18:11,251][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:18:32,015][agents.beso_agent][INFO] - Epoch 1049: Mean test mse is 0.1932800965649741
+[2025-12-04 10:18:32,022][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:18:52,972][agents.beso_agent][INFO] - Epoch 1199: Mean test mse is 0.18322231301239558
+[2025-12-04 10:18:52,986][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:19:13,842][agents.beso_agent][INFO] - Epoch 1349: Mean test mse is 0.17186988251549856
+[2025-12-04 10:19:13,852][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:19:34,727][agents.beso_agent][INFO] - Epoch 1499: Mean test mse is 0.16812634893826076
+[2025-12-04 10:19:34,737][agents.beso_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 10:19:34,880][agents.beso_agent][INFO] - Training done!
+[2025-12-04 10:19:34,887][agents.beso_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-04 10:19:34,965][environments.d3il.d3il_sim.sims.mujoco][INFO] - No module named 'mujoco_py'
+[2025-12-04 10:19:34,966][environments.d3il.d3il_sim.sims.mujoco][INFO] - No mujoco py installed. Mujoco simulation is not available.
+[2025-12-04 10:19:34,967][environments.d3il.d3il_sim.sims.sl][INFO] - No module named 'py_at_broker'
+[2025-12-04 10:19:34,967][environments.d3il.d3il_sim.sims.sl][INFO] - No SL installed. SL simulation and control is not available.
+[2025-12-04 10:19:34,968][simulation.avoiding_sim][INFO] - Starting trained model evaluation
+[2025-12-04 10:21:56,374][__main__][INFO] - done

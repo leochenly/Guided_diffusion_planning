@@ -1,0 +1,23 @@
+[2025-12-04 09:43:49,368][root][INFO] - Loading Sorting Dataset
+[2025-12-04 09:43:49,372][root][INFO] - Loading Sorting Dataset
+[2025-12-04 09:43:49,378][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-04 09:43:49,378][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-04 09:43:49,378][agents.base_agent][INFO] - The model has a total amount of 105674 parameters
+[2025-12-04 09:45:43,777][agents.ddpm_agent][INFO] - Epoch 999: Mean test mse is 0.06652819877490401
+[2025-12-04 09:45:43,780][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 09:47:37,921][agents.ddpm_agent][INFO] - Epoch 1999: Mean test mse is 0.048406295478343964
+[2025-12-04 09:47:37,924][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 09:49:31,884][agents.ddpm_agent][INFO] - Epoch 2999: Mean test mse is 0.03972591320052743
+[2025-12-04 09:49:31,887][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 09:51:26,830][agents.ddpm_agent][INFO] - Epoch 3999: Mean test mse is 0.03414300689473748
+[2025-12-04 09:51:26,834][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 09:53:21,591][agents.ddpm_agent][INFO] - Epoch 4999: Mean test mse is 0.03251319890841842
+[2025-12-04 09:53:21,594][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 09:53:21,701][agents.ddpm_agent][INFO] - Training done!
+[2025-12-04 09:53:21,703][agents.ddpm_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-04 09:53:21,780][environments.d3il.d3il_sim.sims.mujoco][INFO] - No module named 'mujoco_py'
+[2025-12-04 09:53:21,781][environments.d3il.d3il_sim.sims.mujoco][INFO] - No mujoco py installed. Mujoco simulation is not available.
+[2025-12-04 09:53:21,782][environments.d3il.d3il_sim.sims.sl][INFO] - No module named 'py_at_broker'
+[2025-12-04 09:53:21,782][environments.d3il.d3il_sim.sims.sl][INFO] - No SL installed. SL simulation and control is not available.
+[2025-12-04 09:53:21,783][simulation.avoiding_sim][INFO] - Starting trained model evaluation
+[2025-12-04 09:55:46,916][__main__][INFO] - done

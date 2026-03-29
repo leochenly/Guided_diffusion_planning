@@ -1,0 +1,5 @@
+<mujoco model="panda_only">
+  <compiler angle="radian" coordinate="local" />
+  <option timestep="0.0025" gravity="0 0 -9.81" />
+  <include file="panda_rod_invisible.xml" />
+</mujoco>

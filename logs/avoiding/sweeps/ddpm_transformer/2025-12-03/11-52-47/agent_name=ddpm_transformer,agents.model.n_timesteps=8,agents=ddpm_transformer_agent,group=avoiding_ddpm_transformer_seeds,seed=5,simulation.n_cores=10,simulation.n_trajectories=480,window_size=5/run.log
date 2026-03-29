@@ -1,0 +1,12 @@
+[2025-12-03 12:03:05,644][agents.models.diffusion.diffusion_models][INFO] - number of parameters: 2.748260e+05
+[2025-12-03 12:03:05,645][root][INFO] - Loading Sorting Dataset
+[2025-12-03 12:03:05,737][root][INFO] - Loading Sorting Dataset
+[2025-12-03 12:03:05,743][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-03 12:03:05,743][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-03 12:03:05,743][agents.base_agent][INFO] - The model has a total amount of 274826 parameters
+[2025-12-03 12:03:05,870][agents.ddpm_agent][INFO] - Epoch 0: Mean test mse is 1.0395126513072424
+[2025-12-03 12:03:05,878][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 12:03:06,009][agents.ddpm_agent][INFO] - Training done!
+[2025-12-03 12:03:06,016][agents.ddpm_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-03 12:03:06,017][simulation.avoiding_sim][INFO] - Starting trained model evaluation
+[2025-12-03 12:05:03,773][__main__][INFO] - done

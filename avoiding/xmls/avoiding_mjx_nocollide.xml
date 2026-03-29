@@ -1,0 +1,126 @@
+<mujoco model="avoiding_d3il_full">
+  <compiler angle="radian" coordinate="local"/>
+  <!-- <option timestep="0.002" gravity="0 0 -9.81"/> -->
+  <option timestep="0.002"
+        gravity="0 0 -9.81"
+        solver="Newton"
+        iterations="1"
+        ls_iterations="4"/>
+  <visual>
+    <quality shadowsize="4096"/>
+    <map znear="0.01" zfar="5"/>
+  </visual>
+
+  <!-- Panda robot with its own collision setup -->
+  <include file="../../franka_emika_panda/mjx_panda3.xml"/>
+
+  <asset>
+    <texture type="skybox" builtin="gradient"
+             rgb1="0.8 0.9 1" rgb2="0.2 0.3 0.5"
+             width="800" height="800"/>
+    <material name="mat_obs" rgba="1 0 0 1"/>
+    <material name="mat_finish" rgba="0 1 0 0.3"/>
+    <material name="mat_table" rgba="0.8 0.8 0.8 1"/>
+    <material name="mat_eef" rgba="1 0.8 0.2 1"/>
+  </asset>
+
+  <worldbody>
+
+    <!-- Table (visual only, no collision in mjx) -->
+    <body name="table" pos="0 0 -0.05">
+      <geom type="box"
+            size="0.8 0.8 0.05"
+            material="mat_table"
+            contype="0" conaffinity="0"/>
+    </body>
+
+    <!-- Obstacles (visual only, no collision in mjx) -->
+    <body name="l1_obs" pos="0.5 -0.1 0.05">
+      <geom type="cylinder"
+            size="0.03 0.07"
+            material="mat_obs"
+            contype="0" conaffinity="0"/>
+    </body>
+
+    <body name="l2_top_obs" pos="0.425 0.08 0.05">
+      <geom type="cylinder"
+            size="0.025 0.1"
+            material="mat_obs"
+            contype="0" conaffinity="0"/>
+    </body>
+
+    <body name="l2_bottom_obs" pos="0.575 0.08 0.05">
+      <geom type="cylinder"
+            size="0.025 0.1"
+            material="mat_obs"
+            contype="0" conaffinity="0"/>
+    </body>
+
+    <body name="l3_top_obs" pos="0.35 0.26 0.05">
+      <geom type="cylinder"
+            size="0.025 0.1"
+            material="mat_obs"
+            contype="0" conaffinity="0"/>
+    </body>
+
+    <body name="l3_mid_obs" pos="0.5 0.26 0.05">
+      <geom type="cylinder"
+            size="0.025 0.1"
+            material="mat_obs"
+            contype="0" conaffinity="0"/>
+    </body>
+
+    <body name="l3_bottom_obs" pos="0.65 0.26 0.05">
+      <geom type="cylinder"
+            size="0.025 0.1"
+            material="mat_obs"
+            contype="0" conaffinity="0"/>
+    </body>
+
+    <!-- ====== Added board as a chain of small cylinders (acts like a wall) ====== -->
+    <!-- <body name="obs_board_0" pos="0.62 0.12 0.12">
+      <geom type="cylinder" size="0.012 0.06" rgba="0.2 0.2 0.2 1" contype="0" conaffinity="0"/>
+    </body>
+    <body name="obs_board_1" pos="0.62 0.14 0.12">
+      <geom type="cylinder" size="0.012 0.06" rgba="0.2 0.2 0.2 1" contype="0" conaffinity="0"/>
+    </body>
+    <body name="obs_board_2" pos="0.62 0.16 0.12">
+      <geom type="cylinder" size="0.012 0.06" rgba="0.2 0.2 0.2 1" contype="0" conaffinity="0"/>
+    </body>
+    <body name="obs_board_3" pos="0.62 0.18 0.12">
+      <geom type="cylinder" size="0.012 0.06" rgba="0.2 0.2 0.2 1" contype="0" conaffinity="0"/>
+    </body>
+    <body name="obs_board_4" pos="0.62 0.20 0.12">
+      <geom type="cylinder" size="0.012 0.06" rgba="0.2 0.2 0.2 1" contype="0" conaffinity="0"/>
+    </body>
+    <body name="obs_board_5" pos="0.62 0.22 0.12">
+      <geom type="cylinder" size="0.012 0.06" rgba="0.2 0.2 0.2 1" contype="0" conaffinity="0"/>
+    </body> -->
+
+
+    <!-- Finish line (visual only, no collision) -->
+    <body name="finish_line" pos="0.4 0.35 0.05">
+      <geom type="box"
+            size="0.5 0.01 0.005"
+            material="mat_finish"
+            contype="0" conaffinity="0"/>
+    </body>
+
+    <!-- Goal and EEF visual sites (just markers, no collision anyway) -->
+    <site name="goal_site"
+          pos="0.4 0.35 0.12"
+          size="0.02"
+          material="mat_finish"/>
+
+    <site name="eef_site"
+          pos="0.525 -0.28 0.12"
+          size="0.02"
+          material="mat_eef"/>
+
+    <!-- Optional camera (kept as-is) -->
+    <camera name="top"
+            pos="0.5 0.0 1.0"
+            quat="0.7071 0.7071 0 0"
+            fovy="60"/>
+  </worldbody>
+</mujoco>

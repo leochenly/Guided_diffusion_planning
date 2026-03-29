@@ -1,0 +1,14 @@
+[2025-12-04 12:25:23,890][agents.models.diffusion.diffusion_models][INFO] - number of parameters: 2.748260e+05
+[2025-12-04 12:25:23,989][root][INFO] - Loading Sorting Dataset
+[2025-12-04 12:25:24,041][root][INFO] - Loading Sorting Dataset
+[2025-12-04 12:25:24,048][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-04 12:25:24,048][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-04 12:25:24,049][agents.base_agent][INFO] - The model has a total amount of 274826 parameters
+[2025-12-04 12:25:24,470][__main__][INFO] - Loading pretrained weights from: /home/liangyuchen/project/d3il_2/d3il/logs/avoiding/sweeps/ddpm_transformer/2025-12-04/09-28-24-1500/agent_name=ddpm_transformer,agents.model.n_timesteps=8,agents=ddpm_transformer_agent,group=avoiding_ddpm_transformer_seeds,seed=0,simulation.n_cores=15,simulation.n_trajectories=480,window_size=5/eval_best_ddpm.pth
+[2025-12-04 12:25:24,476][agents.ddpm_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-04 12:25:24,555][environments.d3il.d3il_sim.sims.mujoco][INFO] - No module named 'mujoco_py'
+[2025-12-04 12:25:24,555][environments.d3il.d3il_sim.sims.mujoco][INFO] - No mujoco py installed. Mujoco simulation is not available.
+[2025-12-04 12:25:24,557][environments.d3il.d3il_sim.sims.sl][INFO] - No module named 'py_at_broker'
+[2025-12-04 12:25:24,557][environments.d3il.d3il_sim.sims.sl][INFO] - No SL installed. SL simulation and control is not available.
+[2025-12-04 12:25:24,557][simulation.avoiding_sim][INFO] - Starting trained model evaluation
+[2025-12-04 12:26:20,487][__main__][INFO] - simulation done.

@@ -1,0 +1,33 @@
+[2025-12-04 11:04:53,212][agents.models.diffusion.diffusion_models][INFO] - number of parameters: 3.669140e+05
+[2025-12-04 11:04:53,316][root][INFO] - Loading Sorting Dataset
+[2025-12-04 11:04:53,320][root][INFO] - Loading Sorting Dataset
+[2025-12-04 11:04:53,326][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-04 11:04:53,326][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-04 11:04:53,326][agents.base_agent][INFO] - The model has a total amount of 366914 parameters
+[2025-12-04 11:05:18,364][agents.ddpm_encdec_agent][INFO] - Epoch 149: Mean test mse is 0.12740666206393922
+[2025-12-04 11:05:18,376][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:05:42,558][agents.ddpm_encdec_agent][INFO] - Epoch 299: Mean test mse is 0.10124634099858147
+[2025-12-04 11:05:42,576][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:06:06,729][agents.ddpm_encdec_agent][INFO] - Epoch 449: Mean test mse is 0.0894512299980436
+[2025-12-04 11:06:06,744][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:06:30,982][agents.ddpm_encdec_agent][INFO] - Epoch 599: Mean test mse is 0.08353965197290693
+[2025-12-04 11:06:31,000][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:06:55,033][agents.ddpm_encdec_agent][INFO] - Epoch 749: Mean test mse is 0.07554990585361208
+[2025-12-04 11:06:55,051][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:07:19,191][agents.ddpm_encdec_agent][INFO] - Epoch 899: Mean test mse is 0.06928697654179164
+[2025-12-04 11:07:19,208][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:07:43,479][agents.ddpm_encdec_agent][INFO] - Epoch 1049: Mean test mse is 0.06568247079849243
+[2025-12-04 11:07:43,499][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:08:07,496][agents.ddpm_encdec_agent][INFO] - Epoch 1199: Mean test mse is 0.06734140057648931
+[2025-12-04 11:08:31,300][agents.ddpm_encdec_agent][INFO] - Epoch 1349: Mean test mse is 0.061069098966462274
+[2025-12-04 11:08:31,313][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:08:55,433][agents.ddpm_encdec_agent][INFO] - Epoch 1499: Mean test mse is 0.059969391141619
+[2025-12-04 11:08:55,451][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:08:55,623][agents.ddpm_encdec_agent][INFO] - Training done!
+[2025-12-04 11:08:55,636][agents.ddpm_encdec_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-04 11:08:55,812][environments.d3il.d3il_sim.sims.mujoco][INFO] - No module named 'mujoco_py'
+[2025-12-04 11:08:55,812][environments.d3il.d3il_sim.sims.mujoco][INFO] - No mujoco py installed. Mujoco simulation is not available.
+[2025-12-04 11:08:55,814][environments.d3il.d3il_sim.sims.sl][INFO] - No module named 'py_at_broker'
+[2025-12-04 11:08:55,814][environments.d3il.d3il_sim.sims.sl][INFO] - No SL installed. SL simulation and control is not available.
+[2025-12-04 11:08:55,814][simulation.avoiding_sim][INFO] - Starting trained model evaluation
+[2025-12-04 11:11:18,435][__main__][INFO] - done

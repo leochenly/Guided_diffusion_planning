@@ -1,0 +1,8 @@
+- seed=2
+- agents=ddpm_transformer_agent
+- agent_name=ddpm_transformer
+- window_size=5
+- group=avoiding_ddpm_transformer_seeds
+- simulation.n_cores=20
+- simulation.n_trajectories=480
+- agents.model.n_timesteps=8

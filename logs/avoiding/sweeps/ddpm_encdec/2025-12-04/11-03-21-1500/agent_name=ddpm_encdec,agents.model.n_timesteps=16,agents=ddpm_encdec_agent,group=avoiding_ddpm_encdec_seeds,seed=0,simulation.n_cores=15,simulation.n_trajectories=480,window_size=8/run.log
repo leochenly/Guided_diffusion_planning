@@ -1,0 +1,24 @@
+[2025-12-04 11:03:22,473][agents.models.diffusion.diffusion_models][INFO] - number of parameters: 3.669140e+05
+[2025-12-04 11:03:22,573][root][INFO] - Loading Sorting Dataset
+[2025-12-04 11:03:22,577][root][INFO] - Loading Sorting Dataset
+[2025-12-04 11:03:22,583][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-04 11:03:22,583][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-04 11:03:22,583][agents.base_agent][INFO] - The model has a total amount of 366914 parameters
+[2025-12-04 11:03:31,344][agents.ddpm_encdec_agent][INFO] - Epoch 49: Mean test mse is 0.1712977396590369
+[2025-12-04 11:03:31,355][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:03:39,627][agents.ddpm_encdec_agent][INFO] - Epoch 99: Mean test mse is 0.14403970113822392
+[2025-12-04 11:03:39,646][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:03:47,888][agents.ddpm_encdec_agent][INFO] - Epoch 149: Mean test mse is 0.12530864668743952
+[2025-12-04 11:03:47,908][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:03:56,028][agents.ddpm_encdec_agent][INFO] - Epoch 199: Mean test mse is 0.11845195506300245
+[2025-12-04 11:03:56,045][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:04:04,205][agents.ddpm_encdec_agent][INFO] - Epoch 249: Mean test mse is 0.1091507471033505
+[2025-12-04 11:04:04,216][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:04:12,543][agents.ddpm_encdec_agent][INFO] - Epoch 299: Mean test mse is 0.10109341250998634
+[2025-12-04 11:04:12,562][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:04:20,862][agents.ddpm_encdec_agent][INFO] - Epoch 349: Mean test mse is 0.09058590020452227
+[2025-12-04 11:04:20,875][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:04:28,892][agents.ddpm_encdec_agent][INFO] - Epoch 399: Mean test mse is 0.09050858020782471
+[2025-12-04 11:04:28,903][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-04 11:04:36,930][agents.ddpm_encdec_agent][INFO] - Epoch 449: Mean test mse is 0.08594931449208941
+[2025-12-04 11:04:36,942][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!

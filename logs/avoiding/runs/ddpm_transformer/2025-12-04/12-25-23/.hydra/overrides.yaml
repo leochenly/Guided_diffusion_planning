@@ -1,0 +1,6 @@
+- agents=ddpm_transformer_agent
+- agent_name=ddpm_transformer
+- window_size=5
+- agents.model.n_timesteps=8
+- simulation.n_cores=1
+- simulation.n_trajectories=30

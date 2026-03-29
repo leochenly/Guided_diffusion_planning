@@ -1,0 +1,10 @@
+[2026-02-21 12:35:23,669][agents.models.diffusion.diffusion_models][INFO] - number of parameters: 3.669140e+05
+[2026-02-21 12:35:23,670][root][INFO] - Loading Sorting Dataset
+[2026-02-21 12:35:23,674][root][INFO] - Loading Sorting Dataset
+[2026-02-21 12:35:23,679][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854535  -1.52318594 -2.54366118 -1.47282636] and max: [2.68851142 1.91139655 2.31634473 1.92205685], action min: [-1.83908614 -2.15521693] and max: [1.93458316 0.68740099]
+[2026-02-21 12:35:23,679][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2026-02-21 12:35:23,679][agents.base_agent][INFO] - The model has a total amount of 366914 parameters
+[2026-02-21 12:35:24,154][agents.ddpm_encdec_agent][INFO] - Epoch 4: Mean test mse is 0.38108877199036734
+[2026-02-21 12:35:24,165][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!
+[2026-02-21 12:35:24,741][agents.ddpm_encdec_agent][INFO] - Epoch 9: Mean test mse is 0.28660506435803007
+[2026-02-21 12:35:24,751][agents.ddpm_encdec_agent][INFO] - New best test loss. Stored weights have been updated!

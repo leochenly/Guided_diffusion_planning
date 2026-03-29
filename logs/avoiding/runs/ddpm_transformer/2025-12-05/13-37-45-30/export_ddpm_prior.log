@@ -1,0 +1,14 @@
+[2025-12-05 13:37:45,922][__main__][INFO] - ============= CONFIG (resolved) =============
+[2025-12-05 13:37:45,922][__main__][INFO] - ckpt_path: /home/liangyuchen/project/d3il_2/d3il/logs/avoiding/sweeps/ddpm_transformer/2025-12-04/09-28-24-1500/agent_name=ddpm_transformer,agents.model.n_timesteps=8,agents=ddpm_transformer_agent,group=avoiding_ddpm_transformer_seeds,seed=0,simulation.n_cores=15,simulation.n_trajectories=480,window_size=5/eval_best_ddpm.pth
+[2025-12-05 13:37:45,922][__main__][INFO] - prior_save_path: ddpm_prior_actions_seed0.npy
+[2025-12-05 13:37:45,922][__main__][INFO] - prior_horizon: 30
+[2025-12-05 13:37:46,511][agents.models.diffusion.diffusion_models][INFO] - number of parameters: 2.748260e+05
+[2025-12-05 13:37:46,606][root][INFO] - Loading Sorting Dataset
+[2025-12-05 13:37:46,610][root][INFO] - Loading Sorting Dataset
+[2025-12-05 13:37:46,616][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-05 13:37:46,616][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-05 13:37:46,616][agents.base_agent][INFO] - The model has a total amount of 274826 parameters
+[2025-12-05 13:37:47,069][agents.ddpm_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-05 13:37:47,070][__main__][INFO] - Loaded pretrained model parameters.
+[2025-12-05 13:37:47,070][__main__][INFO] - Initial state shape=(4,)
+[2025-12-05 13:37:47,394][__main__][INFO] - Saved prior actions to: /home/liangyuchen/project/d3il_2/d3il/logs/avoiding/runs/ddpm_transformer/2025-12-05/13-37-45/ddpm_prior_actions_seed0.npy

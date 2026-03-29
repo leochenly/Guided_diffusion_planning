@@ -1,0 +1,9 @@
+- seed=0
+- agents=ddpm_encdec_agent
+- agent_name=ddpm_encdec
+- window_size=8
+- group=avoiding_ddpm_encdec_seeds
+- simulation.n_cores=1
+- simulation.n_trajectories=480
+- agents.model.n_timesteps=16
+- simulation.render=False

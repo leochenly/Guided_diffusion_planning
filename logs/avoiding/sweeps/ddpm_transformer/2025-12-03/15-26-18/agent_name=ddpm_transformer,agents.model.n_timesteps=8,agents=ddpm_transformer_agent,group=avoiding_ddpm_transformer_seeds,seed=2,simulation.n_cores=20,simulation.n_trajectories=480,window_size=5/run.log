@@ -1,0 +1,20 @@
+[2025-12-03 15:34:14,002][agents.models.diffusion.diffusion_models][INFO] - number of parameters: 2.748260e+05
+[2025-12-03 15:34:14,003][root][INFO] - Loading Sorting Dataset
+[2025-12-03 15:34:14,006][root][INFO] - Loading Sorting Dataset
+[2025-12-03 15:34:14,012][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-03 15:34:14,012][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-03 15:34:14,012][agents.base_agent][INFO] - The model has a total amount of 274826 parameters
+[2025-12-03 15:34:28,207][agents.ddpm_agent][INFO] - Epoch 99: Mean test mse is 0.12208001847778048
+[2025-12-03 15:34:28,215][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 15:34:43,349][agents.ddpm_agent][INFO] - Epoch 199: Mean test mse is 0.10308776582990374
+[2025-12-03 15:34:43,360][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 15:35:01,453][agents.ddpm_agent][INFO] - Epoch 299: Mean test mse is 0.08903877543551582
+[2025-12-03 15:35:01,464][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 15:35:23,187][agents.ddpm_agent][INFO] - Epoch 399: Mean test mse is 0.0859111983861242
+[2025-12-03 15:35:23,201][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 15:35:49,089][agents.ddpm_agent][INFO] - Epoch 499: Mean test mse is 0.0762709230184555
+[2025-12-03 15:35:49,098][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 15:35:49,392][agents.ddpm_agent][INFO] - Training done!
+[2025-12-03 15:35:49,400][agents.ddpm_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-03 15:35:49,401][simulation.avoiding_sim][INFO] - Starting trained model evaluation
+[2025-12-03 15:38:39,671][__main__][INFO] - done

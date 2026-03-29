@@ -1,0 +1,20 @@
+[2025-12-03 16:38:32,487][agents.models.diffusion.diffusion_models][INFO] - number of parameters: 2.748260e+05
+[2025-12-03 16:38:32,488][root][INFO] - Loading Sorting Dataset
+[2025-12-03 16:38:32,491][root][INFO] - Loading Sorting Dataset
+[2025-12-03 16:38:32,497][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-03 16:38:32,497][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-03 16:38:32,497][agents.base_agent][INFO] - The model has a total amount of 274826 parameters
+[2025-12-03 16:41:00,260][agents.ddpm_agent][INFO] - Epoch 999: Mean test mse is 0.058671518095902035
+[2025-12-03 16:41:00,268][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 16:43:26,707][agents.ddpm_agent][INFO] - Epoch 1999: Mean test mse is 0.045787353068590164
+[2025-12-03 16:43:26,721][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 16:45:53,483][agents.ddpm_agent][INFO] - Epoch 2999: Mean test mse is 0.037693711795977185
+[2025-12-03 16:45:53,506][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 16:48:19,165][agents.ddpm_agent][INFO] - Epoch 3999: Mean test mse is 0.03207117372325489
+[2025-12-03 16:48:19,180][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 16:50:45,651][agents.ddpm_agent][INFO] - Epoch 4999: Mean test mse is 0.026004774495959282
+[2025-12-03 16:50:45,660][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 16:50:45,806][agents.ddpm_agent][INFO] - Training done!
+[2025-12-03 16:50:45,814][agents.ddpm_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-03 16:50:45,815][simulation.avoiding_sim][INFO] - Starting trained model evaluation
+[2025-12-03 17:13:04,695][__main__][INFO] - done

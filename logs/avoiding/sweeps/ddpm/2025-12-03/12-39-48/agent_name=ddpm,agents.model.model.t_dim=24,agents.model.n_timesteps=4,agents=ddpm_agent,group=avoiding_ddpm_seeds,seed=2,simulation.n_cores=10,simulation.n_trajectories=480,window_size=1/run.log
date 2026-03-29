@@ -1,0 +1,19 @@
+[2025-12-03 12:45:22,569][root][INFO] - Loading Sorting Dataset
+[2025-12-03 12:45:22,573][root][INFO] - Loading Sorting Dataset
+[2025-12-03 12:45:22,579][agents.utils.scaler][INFO] - Datset Info: state min: [-2.3854912  -1.52318391 -2.54366235 -1.47282536] and max: [2.6884799  1.91139399 2.31633882 1.92205585], action min: [-1.83908005 -2.15521683] and max: [1.93457704 0.68739146]
+[2025-12-03 12:45:22,579][agents.utils.scaler][INFO] - Training dataset size: input (7305, 4) target (7305, 2)
+[2025-12-03 12:45:22,579][agents.base_agent][INFO] - The model has a total amount of 105674 parameters
+[2025-12-03 12:45:33,207][agents.ddpm_agent][INFO] - Epoch 99: Mean test mse is 0.1683358382433653
+[2025-12-03 12:45:33,210][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 12:45:44,001][agents.ddpm_agent][INFO] - Epoch 199: Mean test mse is 0.1199676152318716
+[2025-12-03 12:45:44,004][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 12:45:54,640][agents.ddpm_agent][INFO] - Epoch 299: Mean test mse is 0.1114309411495924
+[2025-12-03 12:45:54,643][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 12:46:05,141][agents.ddpm_agent][INFO] - Epoch 399: Mean test mse is 0.09532406460493803
+[2025-12-03 12:46:05,151][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 12:46:15,522][agents.ddpm_agent][INFO] - Epoch 499: Mean test mse is 0.08519928436726332
+[2025-12-03 12:46:15,525][agents.ddpm_agent][INFO] - New best test loss. Stored weights have been updated!
+[2025-12-03 12:46:15,636][agents.ddpm_agent][INFO] - Training done!
+[2025-12-03 12:46:15,638][agents.ddpm_agent][INFO] - Loaded pre-trained model parameters
+[2025-12-03 12:46:15,639][simulation.avoiding_sim][INFO] - Starting trained model evaluation
+[2025-12-03 12:48:13,398][__main__][INFO] - done
